@@ -2,8 +2,9 @@ package br.com.fernandonkgw.oo;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 
-public class Pagamentos {
+public class Pagamentos implements Iterable<Pagamento>{
 	
 	private double valorPago;
 	private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
@@ -35,7 +36,7 @@ public class Pagamentos {
 	public ArrayList<Pagamento> pagamentosDo(String cnpjPagador) {
 		ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
 		for (Pagamento pagamento : this.pagamentos) {
-			if (pagamento.getCnpjPagador().equals(cnpjPagador)) {
+			if (pagamento.getDocumentoPagador().equals(cnpjPagador)) {
 				pagamentosFiltrados.add(pagamento);
 			}
 		}
@@ -59,5 +60,10 @@ public class Pagamentos {
 	
 	public boolean foiRealizado(Pagamento pagamento) {
 		return this.pagamentos.contains(pagamento);
+	}
+
+	@Override
+	public Iterator<Pagamento> iterator() {
+		return pagamentos.iterator();
 	}
 }

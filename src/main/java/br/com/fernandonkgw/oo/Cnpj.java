@@ -1,9 +1,13 @@
 package br.com.fernandonkgw.oo;
 
-public class Cnpj {
+public class Cnpj implements Documento {
 
 	private String valor;
 	
+	public Cnpj(String valor) {
+		this.valor = valor;
+	}
+
 	public boolean ehValido() {
 		return primeiroDigitoVerificador() == primeiroDigitoCorreto()
 				&& segundoDigitoVerificador() == segundoDigitoCorreto();

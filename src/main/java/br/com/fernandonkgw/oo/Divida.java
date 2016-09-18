@@ -1,11 +1,10 @@
 package br.com.fernandonkgw.oo;
 
-
 public class Divida {
 
 	private double total;
 	private String credor;
-	private Cnpj cnpjCredor = new Cnpj();
+	private Documento documentoCredor;
 	private Pagamentos pagamentos = new Pagamentos();
 
 	public double getTotal() {
@@ -24,10 +23,14 @@ public class Divida {
 		this.credor = credor;
 	}
 
-	public Cnpj getCnpjCredor() {
-		return cnpjCredor;
-	} 
-
+	public Documento getDocumentoCredor() {
+		return documentoCredor;
+	}
+	
+	public void setDocumentoCredor(Documento documentoCredor) {
+		this.documentoCredor = documentoCredor;
+	}
+	
 	public void registra(Pagamento pagamento) {
 		pagamentos.registra(pagamento);
 	}
