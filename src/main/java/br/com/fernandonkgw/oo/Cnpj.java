@@ -36,4 +36,9 @@ public class Cnpj {
 	public void setValor(String novoValor) {
 		this.valor = novoValor;
 	}
+	
+	@Override
+	public String toString() {
+		return this.valor;
+	}
 }
